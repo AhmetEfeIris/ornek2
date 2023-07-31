@@ -10,10 +10,6 @@ backup_files() {
     tar -czf "${backup_dir}/${backup_filename}" -C "${source_dir}" .
     echo "Yedekleme tamamlandı: ${backup_dir}/${backup_filename}"
 }
-
-# Saat başı yedeklemeyi kontrol eder
-while true; do
-    # Şuanki dakika bilgisini al
     current_minute=$(date +"%M")
 
     # Eğer saat başı ise yedekleme işlemini gerçekleştir
@@ -23,4 +19,3 @@ while true; do
         backup_directory="/path/to/your/backup"  # Yedeklerin kaydedileceği dizin
         backup_files "$source_directory" "$backup_directory"
     fi
-done
